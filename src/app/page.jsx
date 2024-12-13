@@ -61,7 +61,7 @@ dataList.map((user) => (
         <div key={index} className='m-3'>
           <button className='border-2 rounded p-1 text-lg'><FaCheck className='inline m-1'/>{tag}</button>
           </div> 
-      ))}
+      ))} 
       </div>
 
 
