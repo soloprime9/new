@@ -1,50 +1,77 @@
-import React from 'react'
+import Link from "next/link";
+import React from "react";
+import handleSubmit from '../app/signup/page'
 
-const Navbar = () => {
+const Header = () => {
+  handleSubmit == true;
+
+
+
   return (
-    <div>
-        <header className="text-gray-600 body-font">
-  <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-      </svg>
-      <span className="ml-3 text-xl">Tailblocks</span>
-    </a>
-    <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      <a className="mr-5 hover:text-gray-900">First Link</a>
-      <a className="mr-5 hover:text-gray-900">Second Link</a>
-      <a className="mr-5 hover:text-gray-900">Third Link</a>
-      <a className="mr-5 hover:text-gray-900">Fourth Link</a>
-    </nav>
-    <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-      Button
-      <svg
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        className="w-4 h-4 ml-1"
-        viewBox="0 0 24 24"
-      >
-        <path d="M5 12h14M12 5l7 7-7 7" />
-      </svg>
-    </button>
-  </div>
-</header>
+    <header className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Left Section: Logo */}
+        <div className="flex items-center space-x-3">
+          
+          <span className="text-lg font-semibold"><Link href="/">React Libraries</Link></span>
+        </div>
 
-    </div>
-  )
-}
+        {/* Center Section: Search Bar */}
+        <div className="flex-grow max-w-lg mx-4">
+          <div className="relative">
+            <button
+            
+              type="text"
+              placeholder="Search libraries..."
+              className="w-30 py-2 pl-10 pr-4 bg-gray-800 text-white rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            > <a href="/search"> Search</a></button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M11 5a7 7 0 110 14 7 7 0 010-14zm10 10l-4-4"
+              />
+            </svg>
+          </div>
+        </div>
 
-export default Navbar;
+        {/* Right Section: Navigation Links */}
+        <nav className="flex items-center space-x-6">
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-300 hover:text-white"
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-300 hover:text-white"
+          >
+            Explore
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-300 hover:text-white"
+          >
+            About
+          </a>
+        </nav>
+
+      </div>
+
+   
+
+    </header>
+
+    
+  );
+};
+
+export default Header;

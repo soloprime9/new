@@ -24,19 +24,24 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    await axios.post("http://localhost:4000/user/add", formData)
+    const response = await axios.post("http://localhost:4000/user/add", formData)
 
+    
      
-    .then( (result) =>{
-        console.log(result);
-        setSuccessMessage(result);
+    .then( () =>{
+        console.log(response.data);
+        setSuccessMessage(response.data);
         
       } )
+
+      
       
      .catch( (error) => {
       console.log("Error:", error);
       
-    })
+      }
+      
+    )
   }
 
   return (
@@ -87,7 +92,7 @@ const SignUp = () => {
             type="submit"
             className="w-full border-2 border-orange-500 rounded-2xl p-2 mt-2 text-white font-bold text-xl bg-blue-500"
           >
-            Login Now
+            Signup Now
           </button>
         </form>
 
