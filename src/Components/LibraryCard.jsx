@@ -1,39 +1,3 @@
-// 'use client';
-// import axios from 'axios';
-
-// import React, { useEffect, useState } from 'react';
-
-// const LibraryCard = () => {
-//   const [userInfo, setuserInfo] = useState({});
-
-//   useEffect(() => {
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const id = urlParams.get("id");
-
-//     axios.get(`http://localhost:4000/detail/${id}`)
-//       .then((response) => {
-//         setuserInfo(response.data);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       })
-//   }, []);
-
-//   return (
-//     <div className='m-10 border-2 bg-blue-300 rounded'>
-//       {userInfo && Object.keys(userInfo).length > 0 ? (
-//         <div>
-//           <h1>{userInfo.name}</h1>
-//           <p>{userInfo.description}</p>
-//         </div>
-//       ) : (
-//         <div>Loading...</div>
-//       )}
-//     </div>
-//   )
-// }
-
-// export default LibraryCard;
 
 'use client';
 import axios from 'axios';
